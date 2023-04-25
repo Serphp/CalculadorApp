@@ -1,19 +1,37 @@
 import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+//import ExploreContainer from '../components/ExploreContainer';
+import { evaluate } from 'mathjs';
 import './Tab2.css';
 import { useState } from 'react';
 
 const Tab2: React.FC = () => {
   const [pantalla, setPantalla] = useState<string>('');
-  const [acumulado, setAcumulado] = useState<string>('');
+  //const [acumulado, setAcumulado] = useState<number>(NaN);
 
   const agregarNumero = (numero: string) => {
     setPantalla(pantalla + numero);
   };
 
   const realizarOperacion = (operador: string) => {
-    // Si no hay nada en pantalla, no hacemos nada
+    if (operador === '=') {
+      // Realizar cálculo
+      try {
+        const resultado = evaluate(pantalla);
+        setPantalla(resultado.toString());
+      } catch (error) {
+        setPantalla('Error');
+      }
+    } else if (operador === 'C') {
+      // Limpiar pantalla
+      setPantalla('');
+    } else {
+      // Agregar operador a pantalla
+      setPantalla(pantalla + operador);
+    }
   };
+  
+
+
 
   return (
     <IonPage>
