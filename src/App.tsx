@@ -34,12 +34,17 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+/* Context */
+import { CalculadoraProvider } from './context/CalculadoraContext';
+
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
+    <CalculadoraProvider>
     <IonReactRouter>
       <IonTabs>
+        
         <IonRouterOutlet>
           <Route exact path="/tab1">
             <Tab1 />
@@ -68,8 +73,10 @@ const App: React.FC = () => (
             <IonLabel>Tab 3</IonLabel>
           </IonTabButton>
         </IonTabBar>
+        
       </IonTabs>
     </IonReactRouter>
+    </CalculadoraProvider>
   </IonApp>
 );
 

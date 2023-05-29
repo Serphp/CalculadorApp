@@ -46,32 +46,33 @@ const Tab2: React.FC = () => {
           <div className="display">{pantalla}</div>
           <div className="keyboard">
             <div className='__row'>
-            <IonButton class='key' onClick={() => agregarNumero('7')}>7</IonButton>
-            <IonButton class='key' onClick={() => agregarNumero('8')}>8</IonButton>
-            <IonButton class='key' onClick={() => agregarNumero('9')}>9</IonButton>
-            <IonButton class='key' onClick={() => realizarOperacion('/')}>/</IonButton>
+            <button className='key' onClick={() => agregarNumero('7')}>7</button>
+            <button className='key' onClick={() => agregarNumero('8')}>8</button>
+            <button className='key' onClick={() => agregarNumero('9')}>9</button>
+            <button className='key' onClick={() => realizarOperacion('/')}>/</button>
             </div>
           </div>
           <div className="fila">
 
-            <IonButton class='key' onClick={() => agregarNumero('4')}>4</IonButton>
-            <IonButton class='key' onClick={() => agregarNumero('5')}>5</IonButton>
-            <IonButton class='key' onClick={() => agregarNumero('6')}>6</IonButton>
-            <IonButton class='key' onClick={() => realizarOperacion('*')}>*</IonButton>
+            <button className='key' onClick={() => agregarNumero('4')}>4</button>
+            <button className='key' onClick={() => agregarNumero('5')}>5</button>
+            <button className='key' onClick={() => agregarNumero('6')}>6</button>
+            <button className='key' onClick={() => realizarOperacion('*')}>*</button>
 
           </div>
           <div className="fila">
-            <IonButton class='key' onClick={() => agregarNumero('1')}>1</IonButton>
-            <IonButton class='key' onClick={() => agregarNumero('2')}>2</IonButton>
-            <IonButton class='key' onClick={() => agregarNumero('3')}>3</IonButton>
-            <IonButton class='key' onClick={() => realizarOperacion('-')}>-</IonButton>
+            <button className='key' onClick={() => agregarNumero('1')}>1</button>
+            <button className='key' onClick={() => agregarNumero('2')}>2</button>
+            <button className='key' onClick={() => agregarNumero('3')}>3</button>
+            <button className='key' onClick={() => realizarOperacion('-')}>-</button>
           </div>
           <div className="fila">
-            <IonButton class='key' onClick={() => agregarNumero('0')}>0</IonButton>
-            <IonButton class='key' onClick={() => agregarNumero('.')}>.</IonButton>
-            <IonButton class='key' onClick={() => realizarOperacion('+')}>+</IonButton>
-            <IonButton class='key' onClick={() => setPantalla('')}>C</IonButton>
+            <button className='key' onClick={() => agregarNumero('0')}>0</button>
+            <button className='key' onClick={() => agregarNumero('.')}>.</button>
+            <button className='key' onClick={() => realizarOperacion('+')}>+</button>
+            <button className='key' onClick={() => setPantalla('')}>C</button>
           </div>
+
           <div className="fila">
             <IonButton expand="full" onClick={() => realizarOperacion('=')}>
               =
