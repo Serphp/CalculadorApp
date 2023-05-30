@@ -1,37 +1,12 @@
 import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 //import ExploreContainer from '../components/ExploreContainer';
-import { evaluate } from 'mathjs';
+
 import './Tab2.sass';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { CalContext } from '../context/CalculadoraContext';
 
 const Tab2: React.FC = () => {
-  const [pantalla, setPantalla] = useState<string>('');
-  //const [acumulado, setAcumulado] = useState<number>(NaN);
-
-  const agregarNumero = (numero: string) => {
-    setPantalla(pantalla + numero);
-  };
-
-  const realizarOperacion = (operador: string) => {
-    if (operador === '=') {
-      // Realizar cálculo
-      try {
-        const resultado = evaluate(pantalla);
-        setPantalla(resultado.toString());
-      } catch (error) {
-        setPantalla('Error');
-      }
-    } else if (operador === 'C') {
-      // Limpiar pantalla
-      setPantalla('');
-    } else {
-      // Agregar operador a pantalla
-      setPantalla(pantalla + operador);
-    }
-  };
-  
-
-
+  const { agregarNumero, realizarOperacion, pantalla, setPantalla } = useContext(CalContext);
 
   return (
     <IonPage>
@@ -74,9 +49,9 @@ const Tab2: React.FC = () => {
           </div>
 
           <div className="fila">
-            <IonButton expand="full" onClick={() => realizarOperacion('=')}>
+            <button className='total' onClick={() => realizarOperacion('=')}>
               =
-            </IonButton>
+            </button>
           </div>
         </div>
         </section>
